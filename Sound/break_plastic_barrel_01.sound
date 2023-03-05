@@ -1,0 +1,12 @@
+{
+  "UI": false,
+  "Volume": "1.00,1.00,0",
+  "Pitch": "0.90,0.90,0",
+  "Decibels": 145,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/physics/breaking/break_plastic_barrel_01.vsnd"
+  ],
+  "MaximumDistance": 4803.1025,
+  "MinimumDistance": 240.15514
+}

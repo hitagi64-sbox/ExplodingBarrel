@@ -1,0 +1,14 @@
+
+Layer0
+{
+	shader "complex.vfx"
+
+	TextureColor "models/barrel_red_albedo.png"
+	TextureAmbientOcclusion "models/barrel_red_ao.png"
+	TextureNormal "models/barrel_red_normal.png"
+	TextureRoughness "models/barrel_red_roughness.png"
+	F_METALNESS_TEXTURE 1
+	F_SPECULAR 1
+	TextureMetalness "models/barrel_red_metallic.png"
+
+}

@@ -1,0 +1,25 @@
+{
+  "Title": "Exploding Barrel",
+  "Type": "addon",
+  "Org": "lemario",
+  "Ident": "explodingbarrel",
+  "Tags": "runtime",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "ResourcePaths": [],
+  "HasCode": true,
+  "CodePath": "/code/",
+  "Metadata": {
+    "CsProjName": "",
+    "PrimaryAsset": "Sandbox.ExplodingBarrel",
+    "PhysicsMins": "-14,-14,-19",
+    "PhysicsMaxs": "14,12,25",
+    "RenderMins": "-14,-14,-19",
+    "RenderMaxs": "14,12,25",
+    "Summary": "Its a barrel that explodes",
+    "Description": "",
+    "Public": true,
+    "ReplaceTags": "explosion barrel explosive"
+  }
+}

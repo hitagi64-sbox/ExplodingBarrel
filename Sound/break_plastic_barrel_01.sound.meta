@@ -1,0 +1,21 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "break_plastic_barrel_01",
+      "Type": "sound",
+      "Org": "local",
+      "Ident": "break_plastic_barrel_01",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "ResourcePaths": null,
+      "HasCode": false,
+      "CodePath": null,
+      "Metadata": {
+        "SingleAssetSource": "sound/break_plastic_barrel_01.sound"
+      }
+    }
+  }
+}
