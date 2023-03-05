@@ -18,7 +18,7 @@
     "RenderMins": "-14,-14,-19",
     "RenderMaxs": "14,12,25",
     "Summary": "It\u0027s a barrel that can explode.",
-    "Description": "Shoot it or do it damage in another way to make it explode.",
+    "Description": "Shoot it, drop it hard enough or do it damage in another way to make it explode.",
     "Public": true,
     "ReplaceTags": "explosion barrel explosive bomb"
   }
