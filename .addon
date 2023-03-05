@@ -17,9 +17,9 @@
     "PhysicsMaxs": "14,12,25",
     "RenderMins": "-14,-14,-19",
     "RenderMaxs": "14,12,25",
-    "Summary": "Its a barrel that explodes",
-    "Description": "",
+    "Summary": "It\u0027s a barrel that can explode.",
+    "Description": "Shoot it or do it damage in another way to make it explode.",
     "Public": true,
-    "ReplaceTags": "explosion barrel explosive"
+    "ReplaceTags": "explosion barrel explosive bomb"
   }
 }
