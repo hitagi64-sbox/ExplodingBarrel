@@ -14,8 +14,8 @@ public class ExplodingBarrel : ModelEntity
     float maxForce = 5000;
     float forceMaxDistance = 3000;
 
-    float maxDamage = 100;
-    float damageMaxDistance = 500;
+    float maxDamage = 350;
+    float damageMaxDistance = 400;
 
     // Should all barrels in this barrels range explode
     //  in the same tick? (At the same time)
