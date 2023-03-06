@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Editor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -7,31 +8,40 @@ using System.Threading.Tasks;
 
 namespace Sandbox;
 
-[Library("ent_exploding_barrel")]
-public class ExplodingBarrel : ModelEntity
+[Library("ent_exploding_barrel"), HammerEntity]
+[EditorModel("models/red_barrel_small.vmdl")]
+public partial class ExplodingBarrel : ModelEntity
 {
-    float barrelLaunchForce = 50000;
+    const float barrelLaunchForce = 50000;
 
-    float maxForce = 5000;
-    float forceMaxDistance = 3000;
+    [Property(Title = "Maximum push force")]
+    public float maxForce { get; set; } = 5000;
+    [Property(Title = "Maximum push range")]
+    public float forceMaxDistance { get; set; } = 3000;
 
-    float maxDamage = 350;
-    float damageMaxDistance = 400;
+    [Property(Title = "Maximum damage")]
+    public float maxDamage { get; set; } = 350;
+    [Property(Title = "Maximum damage range")]
+    public float damageMaxDistance { get; set; } = 400;
 
-    float physicalDamageMinSpeed = 300;
-    float physicalDamageDivider = 20;
+    [Property(Title = "Minimum speed for the barrel to deal damage")]
+    public float physicalDamageMinSpeed { get; set; } = 300;
+    [Property(Title = "Damage divider (velocity/...=damage)")]
+    public float physicalDamageDivider { get; set; } = 20;
 
-    float physicalDamageBlowUpSpeed = 900;
+    [Property(Title = "Speed at which the barrel will blow up when it collides")]
+    public float physicalDamageBlowUpSpeed { get; set; } = 900;
 
     // Should all barrels in this barrels range explode
     //  in the same tick? (At the same time)
     // Having them explode at the same time will cause all
     //  barrels to go straight up in the air.
-    bool allBarrelsExplodeInSameTick = false;
+    const bool allBarrelsExplodeInSameTick = false;
 
     // A health of 20 requires about 3 bullet shots using
     //  the pistol to explode the barrel.
-    float startingHealth = 20;
+    [Property(Title = "Starting health of the barrel")]
+    public float startingHealth { get; set; } = 20;
 
     public override void Spawn()
     {
@@ -40,7 +50,8 @@ public class ExplodingBarrel : ModelEntity
         SetModel("models/red_barrel_small.vmdl");
         SetupPhysicsFromModel(PhysicsMotionType.Dynamic);
 
-        Health = startingHealth;
+        if (!Game.IsClient)
+            Health = startingHealth;
     }
 
     override public void TakeDamage(DamageInfo info)
@@ -51,11 +62,13 @@ public class ExplodingBarrel : ModelEntity
         if (LifeState == LifeState.Dead)
             return;
 
+        float dmg = info.Damage;
+
         // Make it more resistant against physical impact.
         if (info.HasTag("physics_impact"))
-            info.Damage /= 2;
+            dmg /= 2;
 
-        Health -= info.Damage;
+        Health -= dmg;
 
         if (allBarrelsExplodeInSameTick)
         {

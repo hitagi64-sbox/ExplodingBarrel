@@ -3,7 +3,7 @@
   "Type": "addon",
   "Org": "lemario",
   "Ident": "explodingbarrel",
-  "Tags": "runtime",
+  "Tags": "runtime entity",
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
@@ -20,6 +20,6 @@
     "Summary": "It\u0027s a barrel that can explode.",
     "Description": "Shoot it, drop it hard enough or do it damage in another way to make it explode.",
     "Public": true,
-    "ReplaceTags": "explosion barrel explosive bomb"
+    "ReplaceTags": "explosion barrel explosive bomb entity runtime"
   }
 }
